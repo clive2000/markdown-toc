@@ -115,7 +115,7 @@ class Toc
     isInCodeBlock = false
     for i of @lines
       line = @lines[i]
-      isInCodeBlock = !isInCodeBlock if line.match /^```/
+      isInCodeBlock = !isInCodeBlock if line.match /^```\w*/
       continue if isInCodeBlock
       result = line.match /^\#{1,6}/
       if result
